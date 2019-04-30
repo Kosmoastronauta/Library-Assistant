@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.almasb.test.Controller"
+            prefHeight="400.0" prefWidth="600.0">
+    <Button>
+    </Button>
+
+
+
+</AnchorPane>
+-->
+
+
+<?import org.kordamp.ikonli.javafx.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.*?>
+
+<BorderPane fx:controller="menu.library.assistant.InfoController"
+            xmlns:fx="http://javafx.com/fxml" >
+
+
+    <top>
+            <Label fx:id="maintitle" text="Library Assistant" BorderPane.alignment="center"/>
+         <!--   <Button fx:id="clickme" text="Click me" layoutX="213.0" layoutY="202.0"></Button>
+         !-->
+
+    </top>
+    <right>
+
+        <VBox spacing="5" >
+
+
+            <Button styleClass="vboxright" fx:id="addmember" text="Add Member" >
+
+               <graphic>
+                    <FontIcon iconLiteral="fa-address-book" iconSize="70" selectionEnd="0"/>
+                </graphic>
+            </Button>
+
+            <Button styleClass="vboxright" fx:id="addbook" text="Add Book" >
+                <graphic>
+                    <FontIcon iconLiteral="fa-book" iconSize="70" selectionEnd="0" />
+                </graphic>
+            </Button>
+
+            <Button styleClass="vboxright" fx:id="memberlist" text="Member List" >
+                <graphic>
+                    <FontIcon iconLiteral="fa-address-card" iconSize="70" selectionEnd="0" />
+                </graphic>
+            </Button>
+
+            <Button styleClass="vboxright" fx:id="booklist" text="Book List">
+                <graphic>
+                    <FontIcon iconLiteral="fa-book" iconSize="70" selectionEnd="0" />
+                </graphic>
+            </Button>
+
+            <Button styleClass="vboxright" fx:id="settings" text="Settings" >
+                 <graphic>
+                    <FontIcon iconLiteral="fa-cog" iconSize="70" selectionEnd="0" />
+                </graphic>
+
+            </Button>
+        </VBox>
+    </right>
+
+    <left>
+
+        <VBox spacing="10">
+        <Button styleClass="vboxleft" text="Take">
+            <graphic>
+                <FontIcon styleClass="vboxleft" iconLiteral="fa-book" iconSize="70" selectionEnd="0" />
+            </graphic>
+        </Button>
+
+        <Button styleClass="vboxleft" text="Return">
+            <graphic>
+                <FontIcon styleClass="vboxleft" iconLiteral="fa-rotate-right" iconSize="70" selectionEnd="0" />
+            </graphic>
+
+        </Button>
+        </VBox>
+    </left>
+
+    <center>
+
+        <BorderPane fx:id="center">
+            <BorderPane.margin>
+                <Insets  left="25.0" right="25.0" top="10.0" bottom="25.0" />
+            </BorderPane.margin>
+            <left>
+                <VBox spacing="10">
+                    <VBox alignment="TOP_CENTER">
+
+
+
+
+                        <VBox styleClass="idname" alignment="CENTER" >
+
+                            <Label styleClass="id" text="Book ID">
+                            </Label>
+                        </VBox >
+
+                        <GridPane styleClass="identry" >
+
+                            <VBox spacing="7">
+
+                                <Label text="Title:" styleClass="idfield"/>
+                                <TextField fx:id="bookFieldTitle"/>
+                                <Label text="Author:" styleClass="idfield"/>
+                                <TextField fx:id="bookFieldAuthor" />
+                                <Label text="ID:" styleClass="idfield"/>
+                                <TextField fx:id="bookFieldId"/>
+                                <Button fx:id="bookSearch"  text="Search" GridPane.rowIndex="9" GridPane.columnIndex="4" styleClass="idsearch" onAction="#onButtonSearchClicked"/>
+
+
+                            </VBox>
+
+
+                        </GridPane>
+                    </VBox>
+
+                <VBox alignment="CENTER">
+
+
+                    <VBox styleClass="idname" alignment="CENTER" >
+
+                        <Label styleClass="id" text="Member ID">
+                        </Label>
+                    </VBox >
+
+                    <GridPane styleClass="identry" >
+
+                        <VBox spacing="7">
+
+                            <Label text="Name:" styleClass="idfield"/>
+                            <TextField></TextField>
+                            <Label text="Lastname:" styleClass="idfield"/>
+                            <TextField></TextField>
+                            <Label text="ID:" styleClass="idfield"/>
+                            <TextField></TextField>
+                            <Button text="Search" GridPane.rowIndex="8" GridPane.columnIndex="4" styleClass="idsearch">
+                            </Button>
+                        </VBox>
+
+
+
+
+                    </GridPane>
+                </VBox>
+                </VBox>
+
+
+
+            </left>
+            <right>
+                <VBox fx:id="info" spacing="10.0">
+                    <padding>
+                        <Insets top="25.0"/>
+                    </padding>
+                    <HBox spacing="50">
+                        <Label text="ID" styleClass="infoDescriptionTitle"></Label>
+                        <Label text="Title/Name" styleClass="infoDescriptionTitle"></Label>
+                        <Label text="Author/Last Name" styleClass="infoDescriptionTitle"></Label>
+                        <Label text="From" styleClass="infoDescriptionTitle"></Label>
+                        <Label text="To" styleClass="infoDescriptionTitle"></Label>
+                    </HBox>
+
+
+
+                </VBox>
+            </right>
+        </BorderPane>
+    </center>
+
+</BorderPane>
+<!--
+<GridPane xmlns="http://javafx.com/javafx" alignment="center"
+        >
+
+
+
+<Button GridPane.columnIndex="1" GridPane.rowIndex="1" text="Click me">
+      <graphic>
+          <FontAwesomeIcon iconName="MUSIC" size="2em" glyphStyle="-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);"/>
+      </graphic>
+  </Button>
+ <FontAwesomeIcon iconName="STAR" size="12em" glyphStyle="-fx-fill: linear-gradient(#70b4e5 0%, #247cbc 70%, #2c85c1 85%);"/>
+
+
+
+</GridPane>
+!-->

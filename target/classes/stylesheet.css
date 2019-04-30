@@ -1,0 +1,124 @@
+.root
+{
+    -fx-background-color: #393939;
+}
+
+.vboxright
+{
+
+
+     -fx-background-insets: 5px;
+     -fx-text-size: 50px;
+     -fx-text-align: center;
+     -fx-font-family: "Times New Roman", Times, serif;
+     -fx-background-radius: 8px;
+     -fx-font-weight: bold;
+     -fx-font-style: italic;
+     -fx-pref-width: 180px;
+     -fx-pref-height: 110px;
+     -fx-content-display: top;
+}
+
+.vboxleft
+{
+     -fx-background-insets: 5px;
+     -fx-text-size: 50px;
+     -fx-text-align: center;
+     -fx-font-family: "Times New Roman", Times, serif;
+     -fx-background-radius: 8px;
+     -fx-font-weight: bold;
+     -fx-font-style: italic;
+     -fx-pref-width: 180px;
+     -fx-pref-height: 130px;
+     -fx-content-display: top;
+
+}
+.vboxleft:hover
+{
+    -fx-background-color: #ec7f37;
+
+    }
+}
+
+
+.vboxright:hover
+{
+    -fx-background-color: #ec7f37;
+
+    }
+}
+
+#info
+{
+    -fx-background-color: #2D2D2D;
+    -fx-pref-width: 550px;
+    -fx-indent: 50px;
+    -fx-border-width: 4px;
+    -fx-border-style: dotted;
+}
+
+#center
+{
+    -fx-margin: 20px;
+    -fx-border-width: 2px;
+    -fx-border-style: dotted;
+}
+
+
+.idname
+{
+        -fx-margin: 20px;
+        -fx-border-width: 4px;
+        -fx-border-style: solid;
+        -fx-pref-width: 300px;
+}
+
+.id
+{
+        -fx-background-color: #2D2D2D;
+        -fx-text-fill: white;
+        -fx-text-align: center;
+        -fx-font-family: "Times New Roman", Times, serif;
+        -fx-font-weight: bold;
+        -fx-font-style: italic;
+        -fx-font-size: 20px;
+}
+
+.identry
+{
+    -fx-background-color: #2D2D2D;
+       -fx-border-width: 2px;
+       -fx-border-style: solid;
+       -fx-pref-height: 240px;
+}
+
+.idfield
+{
+    -fx-text-size: 10px;
+    -fx-text-fill: white;
+}
+
+.idsearch
+{
+    -fx-pref-width: 100px;
+    -fx-pref-height: 50px;
+    -fx-text-align: center;
+    -fx-font-style: italic;
+    -fx-font-family: "Times New Roman", Times, serif;
+    -fx-font-style: italic;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+}
+
+.idsearch: hover
+{
+
+    -fx-background-color: #ec7f37;
+
+}
+
+.infoDescriptionTitle
+{
+        -fx-text-size: 10px;
+        -fx-text-fill: white;
+}

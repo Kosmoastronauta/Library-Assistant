@@ -1,0 +1,5 @@
+menu/library/assistant/Controller.class
+menu/library/assistant/Book.class
+menu/library/assistant/Member.class
+menu/library/assistant/FXApp.class
+menu/library/assistant/InfoController.class
