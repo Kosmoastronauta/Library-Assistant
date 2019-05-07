@@ -25,8 +25,7 @@
 
     <top>
             <Label fx:id="maintitle" text="Library Assistant" BorderPane.alignment="center"/>
-         <!--   <Button fx:id="clickme" text="Click me" layoutX="213.0" layoutY="202.0"></Button>
-         !-->
+
 
     </top>
     <right>
@@ -34,14 +33,14 @@
         <VBox spacing="5" >
 
 
-            <Button styleClass="vboxright" fx:id="addmember" text="Add Member" >
+            <Button styleClass="vboxright" fx:id="addmember" text="Add Member"  onAction="#onButtonAddMemberClicked" >
 
                <graphic>
                     <FontIcon iconLiteral="fa-address-book" iconSize="70" selectionEnd="0"/>
                 </graphic>
             </Button>
 
-            <Button styleClass="vboxright" fx:id="addbook" text="Add Book" >
+            <Button styleClass="vboxright" fx:id="addbook" text="Add Book"      onAction="#onButtonAddBookClicked" >
                 <graphic>
                     <FontIcon iconLiteral="fa-book" iconSize="70" selectionEnd="0" />
                 </graphic>
@@ -83,7 +82,18 @@
             </graphic>
 
         </Button>
+
+            <VBox alignment="CENTER">
+            <Label styleClass="date" text="Today is"/>
+                <Label></Label>
+            <Label styleClass="date" fx:id="DayOfWeek" text="DayOfWeek" />
+            <Label styleClass="date" fx:id="Day" text="Day"/>
+            <Label styleClass="date" fx:id="Month" text="Month"/>
+            </VBox>
+
         </VBox>
+
+
     </left>
 
     <center>
@@ -157,22 +167,23 @@
 
 
             </left>
-            <right>
-                <VBox fx:id="info" spacing="10.0">
-                    <padding>
-                        <Insets top="25.0"/>
-                    </padding>
-                    <HBox spacing="50">
-                        <Label text="ID" styleClass="infoDescriptionTitle"></Label>
-                        <Label text="Title/Name" styleClass="infoDescriptionTitle"></Label>
-                        <Label text="Author/Last Name" styleClass="infoDescriptionTitle"></Label>
-                        <Label text="From" styleClass="infoDescriptionTitle"></Label>
-                        <Label text="To" styleClass="infoDescriptionTitle"></Label>
-                    </HBox>
+            <right >
+
+
+                    <TableView fx:id="infoTableView" prefHeight="900" prefWidth="580">
+                        <columns>
+                            <TableColumn minWidth="110" maxWidth="110" text="ID"></TableColumn>
+                            <TableColumn minWidth="120" maxWidth="120" text="Title/Name"></TableColumn>
+                            <TableColumn minWidth="130" maxWidth="130" text="Author/Last Name"></TableColumn>
+                            <TableColumn minWidth="120" maxWidth="120" text="From"></TableColumn>
+                            <TableColumn minWidth="120" maxWidth="120" text="To"></TableColumn>
+
+                        </columns>
+                    </TableView>
 
 
 
-                </VBox>
+
             </right>
         </BorderPane>
     </center>

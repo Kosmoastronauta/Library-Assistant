@@ -35,26 +35,28 @@
 }
 .vboxleft:hover
 {
-    -fx-background-color: #ec7f37;
-
-    }
+    -fx-background-color: linear-gradient(#dc9656,#ab4642);
 }
+
 
 
 .vboxright:hover
 {
-    -fx-background-color: #ec7f37;
-
-    }
+    -fx-background-color: linear-gradient(#dc9656,#ab4642);
 }
 
-#info
+
+#infoTableView
 {
-    -fx-background-color: #2D2D2D;
-    -fx-pref-width: 550px;
-    -fx-indent: 50px;
-    -fx-border-width: 4px;
-    -fx-border-style: dotted;
+
+}
+
+.date
+{
+    -fx-text-fill: azure;
+    -fx-font-size: 30;
+    -fx-font-family: "Times New Roman", Times, serif;
+
 }
 
 #center
@@ -62,6 +64,7 @@
     -fx-margin: 20px;
     -fx-border-width: 2px;
     -fx-border-style: dotted;
+    -fx-pref-height: 900;
 }
 
 
@@ -95,7 +98,19 @@
 .idfield
 {
     -fx-text-size: 10px;
+    -fx-font-size: 15;
     -fx-text-fill: white;
+    -fx-border-bottom: 2px solid;
+    -fx-font-style: italic;
+    -fx-font-family: "Times New Roman",Times,serif;
+
+}
+
+#bookFieldAuthor
+{
+    -fx-border-style: solid;
+    -fx-border-width: 2 0 0 0;
+    -fx-border-color: aliceblue;
 }
 
 .idsearch
@@ -105,20 +120,79 @@
     -fx-text-align: center;
     -fx-font-style: italic;
     -fx-font-family: "Times New Roman", Times, serif;
-    -fx-font-style: italic;
     -fx-font-weight: bold;
     -fx-background-radius: 8px;
+
 }
 
-.idsearch: hover
+.idsearch:hover
 {
-
-    -fx-background-color: #ec7f37;
-
+    -fx-background-color: linear-gradient(#dc9656,#ab4642);
 }
 
 .infoDescriptionTitle
 {
         -fx-text-size: 10px;
         -fx-text-fill: white;
+}
+
+.memberData
+{
+    -fx-font-family: "Times New Roman", Times, serif;
+    -fx-font-size: 20px;
+    -fx-text-fill: azure;
+}
+
+.box
+{
+    -fx-background-color: #2D2D2D;
+}
+
+.title
+{
+    -fx-font-family: "Times New Roman", Times, serif;
+    -fx-font-size: 30px;
+    -fx-text-fill: azure;
+}
+
+#buttonAddSave
+{
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+}
+
+#buttonAddSave: hover
+{
+    -fx-background-color: linear-gradient(#dc9656,#ab4642);
+        
+}
+
+.foot
+{
+    -fx-font-family: "Times New Roman", Times, serif;
+    -fx-font-size: 15px;
+    -fx-text-fill: azure;
+}
+
+.dataField
+{
+    -fx-font-size: 15px;
+    -fx-position: relative;
+}
+
+.dataField text
+{
+    -fx-position: absolute;
+    -fx-background-color: aqua;
+}
+.dataField:focused ~text {
+
+    -fx-top: -15px;
+
+}
+
+.button:hover
+{
+    -fx-background-color: linear-gradient(#dc9656,#ab4642);
 }

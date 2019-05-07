@@ -1,5 +1,8 @@
+/home/mateusz/IdeaProjects/Library-Assistant/src/main/java/menu/library/assistant/AddBookController.java
 /home/mateusz/IdeaProjects/Library-Assistant/src/main/java/menu/library/assistant/Controller.java
 /home/mateusz/IdeaProjects/Library-Assistant/src/main/java/menu/library/assistant/InfoController.java
 /home/mateusz/IdeaProjects/Library-Assistant/src/main/java/menu/library/assistant/Member.java
 /home/mateusz/IdeaProjects/Library-Assistant/src/main/java/menu/library/assistant/Book.java
-/home/mateusz/IdeaProjects/Library-Assistant/src/main/java/menu/library/assistant/FXApp.java
+/home/mateusz/IdeaProjects/Library-Assistant/src/main/java/addmember/AddMemberController.java
+/home/mateusz/IdeaProjects/Library-Assistant/src/main/java/addmember/AddMember.java
+/home/mateusz/IdeaProjects/Library-Assistant/src/main/java/menu/library/assistant/Main.java

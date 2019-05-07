@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="menu.library.assistant.AddBookController"
+            prefHeight="400.0" prefWidth="600.0" >
+
+
+
+    <top>
+        <Label styleClass="title" text="Add Book" alignment="CENTER" BorderPane.alignment="CENTER" />
+    </top>
+
+    <center>
+
+
+
+
+        <GridPane styleClass="box" maxWidth="450" maxHeight="400">
+            <padding>
+                <Insets left="10" right="10" top="10" />
+            </padding>
+
+
+            <GridPane styleClass="box" BorderPane.alignment="CENTER"   >
+
+                <HBox spacing="20">
+                    <VBox spacing="15">
+
+
+
+                        <Label styleClass="memberData" text="Title*:"      />
+                        <Label styleClass="memberData" text="Author*:"     />
+                        <Label styleClass="memberData" text="Year:"       />
+                        <Label styleClass="memberData" text="Edition:"    />
+                        <Label styleClass="memberData" text="ID*:"         />
+
+                        <Button fx:id="buttonAddSave" text="Add" minWidth="100" minHeight="50"/>
+
+
+                    </VBox>
+                    <VBox spacing="12">
+                        <TextField text="Title" styleClass="dataField" fx:id="addTitleField"    />
+                        <TextField styleClass="dataField" fx:id="addAuthorField"   />
+                        <TextField styleClass="dataField" fx:id="addYearField"     />
+                        <TextField styleClass="dataField" fx:id="addEditionField"  />
+                        <TextField styleClass="dataField" fx:id="addIDField"       />
+                    </VBox>
+                </HBox>
+
+
+
+            </GridPane>
+
+
+
+        </GridPane>
+
+
+    </center>
+    <bottom >
+
+        <Label styleClass="foot" text="   *-necessary field" />
+    </bottom>
+
+</BorderPane>

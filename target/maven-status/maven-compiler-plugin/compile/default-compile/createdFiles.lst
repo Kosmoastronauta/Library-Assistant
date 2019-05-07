@@ -1,5 +1,8 @@
-menu/library/assistant/Controller.class
 menu/library/assistant/Book.class
+addmember/AddMember.class
 menu/library/assistant/Member.class
-menu/library/assistant/FXApp.class
+addmember/AddMemberController.class
+menu/library/assistant/AddBookController.class
+menu/library/assistant/Controller.class
+menu/library/assistant/Main.class
 menu/library/assistant/InfoController.class
