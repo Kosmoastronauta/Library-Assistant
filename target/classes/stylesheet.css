@@ -7,30 +7,30 @@
 {
 
 
-     -fx-background-insets: 5px;
-     -fx-text-size: 50px;
-     -fx-text-align: center;
-     -fx-font-family: "Times New Roman", Times, serif;
-     -fx-background-radius: 8px;
-     -fx-font-weight: bold;
-     -fx-font-style: italic;
-     -fx-pref-width: 180px;
-     -fx-pref-height: 110px;
-     -fx-content-display: top;
+    -fx-background-insets: 5px;
+    -fx-text-size: 50px;
+    -fx-text-align: center;
+    -fx-font-family: "Times New Roman", Times, serif;
+    -fx-background-radius: 8px;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 110px;
+    -fx-content-display: top;
 }
 
 .vboxleft
 {
-     -fx-background-insets: 5px;
-     -fx-text-size: 50px;
-     -fx-text-align: center;
-     -fx-font-family: "Times New Roman", Times, serif;
-     -fx-background-radius: 8px;
-     -fx-font-weight: bold;
-     -fx-font-style: italic;
-     -fx-pref-width: 180px;
-     -fx-pref-height: 130px;
-     -fx-content-display: top;
+    -fx-background-insets: 5px;
+    -fx-text-size: 50px;
+    -fx-text-align: center;
+    -fx-font-family: "Times New Roman", Times, serif;
+    -fx-background-radius: 8px;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 130px;
+    -fx-content-display: top;
 
 }
 .vboxleft:hover
@@ -70,29 +70,29 @@
 
 .idname
 {
-        -fx-margin: 20px;
-        -fx-border-width: 4px;
-        -fx-border-style: solid;
-        -fx-pref-width: 300px;
+    -fx-margin: 20px;
+    -fx-border-width: 4px;
+    -fx-border-style: solid;
+    -fx-pref-width: 300px;
 }
 
 .id
 {
-        -fx-background-color: #2D2D2D;
-        -fx-text-fill: white;
-        -fx-text-align: center;
-        -fx-font-family: "Times New Roman", Times, serif;
-        -fx-font-weight: bold;
-        -fx-font-style: italic;
-        -fx-font-size: 20px;
+    -fx-background-color: #2D2D2D;
+    -fx-text-fill: white;
+    -fx-text-align: center;
+    -fx-font-family: "Times New Roman", Times, serif;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+    -fx-font-size: 20px;
 }
 
 .identry
 {
     -fx-background-color: #2D2D2D;
-       -fx-border-width: 2px;
-       -fx-border-style: solid;
-       -fx-pref-height: 240px;
+    -fx-border-width: 2px;
+    -fx-border-style: solid;
+    -fx-pref-height: 240px;
 }
 
 .idfield
@@ -132,8 +132,8 @@
 
 .infoDescriptionTitle
 {
-        -fx-text-size: 10px;
-        -fx-text-fill: white;
+    -fx-text-size: 10px;
+    -fx-text-fill: white;
 }
 
 .memberData
@@ -153,6 +153,7 @@
     -fx-font-family: "Times New Roman", Times, serif;
     -fx-font-size: 30px;
     -fx-text-fill: azure;
+    -fx-background-color: gray;
 }
 
 #buttonAddSave
@@ -165,7 +166,7 @@
 #buttonAddSave: hover
 {
     -fx-background-color: linear-gradient(#dc9656,#ab4642);
-        
+
 }
 
 .foot
@@ -186,13 +187,27 @@
     -fx-position: absolute;
     -fx-background-color: aqua;
 }
-.dataField:focused ~text {
-
+.dataField:focused ~text
+{
     -fx-top: -15px;
-
 }
 
 .button:hover
 {
     -fx-background-color: linear-gradient(#dc9656,#ab4642);
+}
+
+.titlevackground
+{
+    -fx-background-color: gray;
+}
+
+.dataleft
+{
+    -webkit-fx-margin-le: ;
+    -moz-fx-margin-le: ;
+    -ms-fx-margin-le: ;
+    -o-fx-margin-le: ;
+    -khtml-fx-margin-le: ;
+    fx-margin-le: ;
 }

@@ -6,12 +6,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-
 import javafx.event.ActionEvent;
 import javafx.stage.Stage;
-
 import java.time.LocalDate;
-import java.util.Date;
 
 
 public class InfoController {
@@ -52,12 +49,22 @@ public class InfoController {
     }
 
     @FXML
+    public void initialize()
+    {
+        LocalDate date = LocalDate.now();
+
+        Day.setText(Integer.toString(date.getDayOfMonth()));
+        DayOfWeek.setText(date.getDayOfWeek().name());
+        Month.setText(date.getMonth().name());
+    }
+
+    @FXML
     public void onButtonAddMemberClicked(ActionEvent event)
     {
         try {
             Stage primaryStage = new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("/addmember.fxml"));
-            Scene scene = new Scene(root, 370, 250);
+            Scene scene = new Scene(root, 370, 350);
             scene.getStylesheets().add(getClass().getResource("/stylesheet.css").toExternalForm());
             primaryStage.setTitle("Add Member");
             primaryStage.setScene(scene);
@@ -84,14 +91,22 @@ public class InfoController {
     }
 
     @FXML
-    public void initialize()
+    public void onButtonMemberListClicked(ActionEvent event)
     {
-        LocalDate date = LocalDate.now();
-
-        Day.setText(Integer.toString(date.getDayOfMonth()));
-        DayOfWeek.setText(date.getDayOfWeek().name());
-        Month.setText(date.getMonth().name());
+        try {
+            Stage primaryStage = new Stage();
+            Parent root = FXMLLoader.load(getClass().getResource("/memberlist.fxml"));
+            Scene scene = new Scene(root, 840, 390);
+            scene.getStylesheets().add(getClass().getResource("/stylesheet.css").toExternalForm());
+            primaryStage.setTitle("Member List");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (Exception e) {
+            System.out.println("Can not load new window");
+        }
     }
+
+
 
 
 

@@ -46,7 +46,7 @@
                 </graphic>
             </Button>
 
-            <Button styleClass="vboxright" fx:id="memberlist" text="Member List" >
+            <Button styleClass="vboxright" fx:id="memberlist" text="Member List" onAction="#onButtonMemberListClicked">
                 <graphic>
                     <FontIcon iconLiteral="fa-address-card" iconSize="70" selectionEnd="0" />
                 </graphic>

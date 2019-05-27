@@ -9,7 +9,7 @@
 <?import javafx.geometry.Insets?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="menu.library.assistant.AddBookController"
+            fx:controller="controllers.AddBookController"
             prefHeight="400.0" prefWidth="600.0" >
 
 
@@ -36,22 +36,22 @@
 
 
 
-                        <Label styleClass="memberData" text="Title*:"      />
-                        <Label styleClass="memberData" text="Author*:"     />
-                        <Label styleClass="memberData" text="Year:"       />
-                        <Label styleClass="memberData" text="Edition:"    />
-                        <Label styleClass="memberData" text="ID*:"         />
+                        <Label styleClass = "memberData" text = "Title*:"      />
+                        <Label styleClass = "memberData" text = "Author*:"     />
+                        <Label styleClass = "memberData" text = "Year:"        />
+                        <Label styleClass = "memberData" text = "Edition:"     />
+                        <Label styleClass = "memberData" text = "ID*:"         />
 
-                        <Button fx:id="buttonAddSave" text="Add" minWidth="100" minHeight="50"/>
+                        <Button fx:id="buttonAdd" text="Add" minWidth="100" minHeight="50" onAction = "#onButtonAddClicked"/>
 
 
                     </VBox>
                     <VBox spacing="12">
-                        <TextField text="Title" styleClass="dataField" fx:id="addTitleField"    />
-                        <TextField styleClass="dataField" fx:id="addAuthorField"   />
-                        <TextField styleClass="dataField" fx:id="addYearField"     />
-                        <TextField styleClass="dataField" fx:id="addEditionField"  />
-                        <TextField styleClass="dataField" fx:id="addIDField"       />
+                        <TextField styleClass = "dataField" fx:id = "titleField"    />
+                        <TextField styleClass = "dataField" fx:id = "authorField"   />
+                        <TextField styleClass = "dataField" fx:id = "yearField"     />
+                        <TextField styleClass = "dataField" fx:id = "EditionField"  />
+                        <TextField styleClass = "dataField" fx:id = "IDField"       />
                     </VBox>
                 </HBox>
 
