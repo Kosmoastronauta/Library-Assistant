@@ -1,7 +1,8 @@
 controllers/AddBookController.class
 menu/library/assistant/Book.class
-addmember/AddMember.class
+controllers/Add.class
 menu/library/assistant/Member.class
+controllers/Reservation.class
 menu/library/assistant/Controller.class
 menu/library/assistant/MemberListController.class
 controllers/AddMemberController.class

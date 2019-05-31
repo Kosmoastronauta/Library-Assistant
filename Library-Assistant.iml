@@ -24,8 +24,7 @@
     <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:linux:11" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:11" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-fxml:linux:11" level="project" />
-    <orderEntry type="library" name="Maven: org.xerial:sqlite-jdbc:3.6.16" level="project" />
-    <orderEntry type="library" name="Maven: org.xerial.thirdparty:nestedvm:1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.xerial:sqlite-jdbc:3.27.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.webjars.bower:fontawesome:4.7.0" level="project" />
     <orderEntry type="library" name="Maven: org.kordamp.ikonli:ikonli-fontawesome-pack:11.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.kordamp.ikonli:ikonli-core:11.1.0" level="project" />

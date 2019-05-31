@@ -5,6 +5,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
+import menu.library.assistant.Member;
+
+import java.lang.String;
+import java.net.IDN;
 
 
 public class AddMemberController {
@@ -62,9 +66,22 @@ public class AddMemberController {
             p.warning();
         }
 
+        else if(phone.length()!=0 && !phoneValidation(phone))
+        {
+            Popup p = new Popup("Error Dialog", "Invalid Data", "Inproper phone number");
+            p.warning();
+        }
+
+        else
+        {
+            System.out.println("Everything is OK");
+            Add add = new Add();
+            add.member(new Member(name, lastName, email, id, Integer.parseInt(phone)));
+        }
+
     }
 
-    static boolean onlyletters(String s)
+    private static boolean onlyletters(String s)
     {
         char character;
 
@@ -78,10 +95,22 @@ public class AddMemberController {
         return true;
     }
 
-    static boolean emailValidation(String email)
+    private static boolean emailValidation(String email)
     {
         String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
         return email.matches(regex);
+    }
+
+    private static boolean phoneValidation(String phone)
+    {
+       try{
+           int temp;
+           temp = Integer.parseInt(phone);
+           return true;
+
+       } catch (NumberFormatException e) {
+            return false;
+       }
     }
 
 

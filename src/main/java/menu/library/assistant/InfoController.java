@@ -61,44 +61,29 @@ public class InfoController {
     @FXML
     public void onButtonAddMemberClicked(ActionEvent event)
     {
-        try {
-            Stage primaryStage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("/addmember.fxml"));
-            Scene scene = new Scene(root, 370, 350);
-            scene.getStylesheets().add(getClass().getResource("/stylesheet.css").toExternalForm());
-            primaryStage.setTitle("Add Member");
-            primaryStage.setScene(scene);
-            primaryStage.show();
-        } catch (Exception e) {
-            System.out.println("Can not load new window");
-        }
+        this.openWindow("Add Member", "addmember.fxml",370,350);
     }
 
     @FXML
     public void onButtonAddBookClicked(ActionEvent event)
     {
-        try {
-            Stage primaryStage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("/addbook.fxml"));
-            Scene scene = new Scene(root, 370, 340);
-            scene.getStylesheets().add(getClass().getResource("/stylesheet.css").toExternalForm());
-            primaryStage.setTitle("Add Book");
-            primaryStage.setScene(scene);
-            primaryStage.show();
-        } catch (Exception e) {
-            System.out.println("Can not load new window");
-        }
+        this.openWindow("Add Book","addbook.fxml", 370, 340);
     }
 
     @FXML
     public void onButtonMemberListClicked(ActionEvent event)
     {
+        this.openWindow("Member List","memberlist.fxml", 840, 390);
+    }
+
+    private void openWindow(String title, String fxmlFile, int x, int y)
+    {
         try {
             Stage primaryStage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("/memberlist.fxml"));
-            Scene scene = new Scene(root, 840, 390);
+            Parent root = FXMLLoader.load(getClass().getResource("/"+fxmlFile));
+            Scene scene = new Scene(root, x, y);
             scene.getStylesheets().add(getClass().getResource("/stylesheet.css").toExternalForm());
-            primaryStage.setTitle("Member List");
+            primaryStage.setTitle(title);
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (Exception e) {

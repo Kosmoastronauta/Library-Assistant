@@ -50,7 +50,7 @@
                         <TextField styleClass = "dataField" fx:id = "titleField"    />
                         <TextField styleClass = "dataField" fx:id = "authorField"   />
                         <TextField styleClass = "dataField" fx:id = "yearField"     />
-                        <TextField styleClass = "dataField" fx:id = "EditionField"  />
+                        <TextField styleClass = "dataField" fx:id = "editionField"  />
                         <TextField styleClass = "dataField" fx:id = "IDField"       />
                     </VBox>
                 </HBox>

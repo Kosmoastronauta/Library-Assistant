@@ -3,21 +3,21 @@ package menu.library.assistant;
 public class Member {
 
     private String name;
-    private String surname;
+    private String last_name;
     private String email;
     private String id;
     private int Phone;
 
-    public Member(String name, String surname, String email, String id, int phone)
+    public Member(String name, String last_name, String email, String id, int phone)
     {
         if(onlyletters(name))
         {
             this.name = name;
         }
 
-        if(onlyletters(surname))
+        if(onlyletters(last_name))
         {
-            this.surname = surname;
+            this.last_name = last_name;
         }
 
         if(emailValidation(email))
@@ -28,14 +28,15 @@ public class Member {
         this.id=id;
 
 
+
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setSurname(String last_name) {
+        this.last_name = last_name;
     }
 
     public void setEmail(String email) {
@@ -55,7 +56,7 @@ public class Member {
     }
 
     public String getSurname() {
-        return surname;
+        return last_name;
     }
 
     public String getEmail() {
@@ -90,6 +91,7 @@ public class Member {
         String regex = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
         return email.matches(regex);
     }
+
 
 
 }
