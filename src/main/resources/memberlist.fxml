@@ -7,9 +7,10 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="menu.library.assistant.MemberListController"
+            fx:controller="controllers.MemberListController"
             prefHeight="400.0" prefWidth="600.0">
 
 
@@ -28,11 +29,11 @@
                             <left>10</left>
                         </Insets>
                     </VBox.margin>
-                    <Label styleClass="memberData" text="Name"   />
+                    <Label styleClass="memberData" text="Name"     />
                     <TextField/>
-                    <Label styleClass="memberData" text="Surname"/>
+                    <Label styleClass="memberData" text="Last Name"/>
                     <TextField/>
-                    <Label styleClass="memberData" text="ID"     />
+                    <Label styleClass="memberData" text="ID"       />
                     <TextField/>
                 </VBox>
 
@@ -43,11 +44,19 @@
         </left>
     <center>
         <VBox alignment="CENTER">
-        <TableView prefWidth="510" prefHeight="510" maxWidth="600" maxHeight="300">
+        <TableView fx:id="tableView" prefWidth="510" prefHeight="510" maxWidth="600" maxHeight="300">
             <columns>
-                <TableColumn minWidth="170" maxWidth="170" text="ID"></TableColumn>
-                <TableColumn minWidth="170" maxWidth="170" text="Name"></TableColumn>
-                <TableColumn minWidth="170" maxWidth="170" text="Last Name"></TableColumn>
+
+                <TableColumn fx:id="colID" minWidth="80" maxWidth="170" text="ID">              </TableColumn>
+
+                <TableColumn fx:id="colName" minWidth="80" maxWidth="170" text="Name">          </TableColumn>
+
+                <TableColumn fx:id="colLastName" minWidth="80" maxWidth="170" text="Last Name"> </TableColumn>
+
+                <TableColumn fx:id="colEmail" minWidth="100" maxWidth="200" text="E-mail">      </TableColumn>
+
+                <TableColumn fx:id="colPhone" minWidth="80" maxWidth="170" text="Phone">        </TableColumn>
+
             </columns>
 
         </TableView>

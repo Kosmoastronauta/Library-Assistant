@@ -1,11 +1,14 @@
+controllers/MemberListController.class
 controllers/AddBookController.class
 menu/library/assistant/Book.class
-controllers/Add.class
+controllers/BookListController$ViewBook.class
 menu/library/assistant/Member.class
 controllers/Reservation.class
 menu/library/assistant/Controller.class
-menu/library/assistant/MemberListController.class
+controllers/MemberListController$Person.class
+controllers/BookListController.class
 controllers/AddMemberController.class
 menu/library/assistant/Main.class
 controllers/Popup.class
+controllers/DataSource.class
 menu/library/assistant/InfoController.class

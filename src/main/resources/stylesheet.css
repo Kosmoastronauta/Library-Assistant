@@ -17,6 +17,7 @@
     -fx-pref-width: 180px;
     -fx-pref-height: 110px;
     -fx-content-display: top;
+    -fx-border-left: 2px, solid;
 }
 
 .vboxleft
@@ -204,10 +205,5 @@
 
 .dataleft
 {
-    -webkit-fx-margin-le: ;
-    -moz-fx-margin-le: ;
-    -ms-fx-margin-le: ;
-    -o-fx-margin-le: ;
-    -khtml-fx-margin-le: ;
-    fx-margin-le: ;
+
 }

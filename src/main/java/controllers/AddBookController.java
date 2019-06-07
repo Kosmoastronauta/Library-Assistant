@@ -33,7 +33,7 @@ public class AddBookController {
         String title = titleField.getText();
         String author = authorField.getText();
         String edition = editionField.getText();
-        String ID = IDField.getText();
+        int ID = Integer.valueOf(IDField.getText());
         int year = Integer.valueOf(yearField.getText());
 
         if(title.length()==0)
@@ -47,19 +47,21 @@ public class AddBookController {
             Popup p = new Popup("Error Dialog","Invalid Data", "Author field is empty!");
             p.warning();
         }
+        /*
 
         else if(ID.length()==0)
         {
             Popup p = new Popup("Error Dialog","Invalid Data", "ID field is empty!");
             p.warning();
         }
+        */
+
 
         else
         {
-            Add add = new Add();
-
-
-            add.book(new Book(title, author, edition, ID, year));
+            DataSource data = new DataSource();
+            data.add(new Book(ID, title, author, edition, year));
+            System.out.println("Ok book added");
         }
     }
 

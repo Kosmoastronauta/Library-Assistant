@@ -2,6 +2,7 @@ package menu.library.assistant;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -42,6 +43,7 @@ public class InfoController {
     }
 
 
+
     @FXML
     public void onButtonSearchClicked(ActionEvent e)
     {
@@ -74,6 +76,12 @@ public class InfoController {
     public void onButtonMemberListClicked(ActionEvent event)
     {
         this.openWindow("Member List","memberlist.fxml", 840, 390);
+    }
+
+    @FXML
+    public void onButtonBookListController(ActionEvent event)
+    {
+        this.openWindow("Book List", "bookList.fxml", 840, 390);
     }
 
     private void openWindow(String title, String fxmlFile, int x, int y)

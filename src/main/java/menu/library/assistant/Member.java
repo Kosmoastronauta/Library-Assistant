@@ -1,74 +1,65 @@
 package menu.library.assistant;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+
 public class Member {
 
     private String name;
-    private String last_name;
+    private String lastName;
     private String email;
-    private String id;
-    private int Phone;
+    private int id;
+    private String phone;
 
-    public Member(String name, String last_name, String email, String id, int phone)
+    public Member() {}
+
+    public Member(String name, String last_name, String email, int id, String phone)
     {
-        if(onlyletters(name))
-        {
-            this.name = name;
-        }
-
-        if(onlyletters(last_name))
-        {
-            this.last_name = last_name;
-        }
-
-        if(emailValidation(email))
-        {
-            this.email = email;
-        }
-
-        this.id=id;
-
-
-
+       this.name=name;
+       this.lastName=last_name;
+       this.email=email;
+       this.id=id;
+       this.phone=phone;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setSurname(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String last_name) {
+        this.lastName = last_name;
     }
 
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public void setPhone(int phone) {
-        Phone = phone;
+    public void setPhone(String phone) {
+        phone = phone;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getSurname() {
-        return last_name;
+    public String getLastName() {
+        return lastName;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public String getId() {
+    public int getID() {
         return id;
     }
 
-    public int getPhone() {
-        return Phone;
+    public String getPhone() {
+        return phone;
     }
 
 
@@ -95,3 +86,4 @@ public class Member {
 
 
 }
+

@@ -5,10 +5,10 @@ public class Book {
     private String title;
     private String author;
     private String edition;
-    private String ID;
+    private int ID;
     private int year;
 
-    public Book(String title, String author, String edition, String ID, int year)
+    public Book(int ID, String title, String author, String edition, int year)
     {
         this.title = title;
         this.author = author;
@@ -42,11 +42,11 @@ public class Book {
         this.edition = edition;
     }
 
-    public String getID() {
+    public int getID() {
         return ID;
     }
 
-    public void setID(String ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
 

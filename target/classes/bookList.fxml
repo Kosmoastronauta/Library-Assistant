@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.BookListController"
+            prefHeight="400.0" prefWidth="600.0">
+
+
+    <top>
+        <HBox styleClass="titlebackground" alignment="CENTER" minWidth="80">
+            <Label styleClass="title" text="Member List" alignment="CENTER" BorderPane.alignment="CENTER" />
+        </HBox>
+    </top>
+    <left>
+        <VBox styleClass="dataleft" spacing="60">
+
+
+            <VBox minWidth="20" spacing="5">
+                <VBox.margin>
+                    <Insets>
+                        <left>10</left>
+                    </Insets>
+                </VBox.margin>
+                <Label styleClass="memberData" text="Title"     />
+                <TextField/>
+                <Label styleClass="memberData" text="Author"/>
+                <TextField/>
+                <Label styleClass="memberData" text="ID"       />
+                <TextField/>
+            </VBox>
+
+            <VBox alignment="BOTTOM_CENTER">
+                <Button styleClass="idsearch" text="Show"/>
+            </VBox>
+        </VBox>
+    </left>
+    <center>
+        <VBox alignment="CENTER">
+            <TableView fx:id="tableView" prefWidth="510" prefHeight="510" maxWidth="600" maxHeight="300">
+                <columns>
+                    <TableColumn fx:id="colID" minWidth="80" maxWidth="170" text="ID">              </TableColumn>
+
+                    <TableColumn fx:id="colTitle" minWidth="80" maxWidth="200" text="Title">          </TableColumn>
+
+                    <TableColumn fx:id="colAuthor" minWidth="80" maxWidth="170" text="Author"> </TableColumn>
+
+                    <TableColumn fx:id="colEdition" minWidth="80" maxWidth="150" text="Edition">      </TableColumn>
+
+                    <TableColumn fx:id="colYear" minWidth="80" maxWidth="170" text="Year">        </TableColumn>
+                </columns>
+
+            </TableView>
+        </VBox>
+    </center>
+    <right>
+
+    </right>
+
+</BorderPane>

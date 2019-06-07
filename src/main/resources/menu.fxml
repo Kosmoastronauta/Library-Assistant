@@ -52,7 +52,7 @@
                 </graphic>
             </Button>
 
-            <Button styleClass="vboxright" fx:id="booklist" text="Book List">
+            <Button styleClass="vboxright" fx:id="booklist" text="Book List" onAction="#onButtonBookListController">
                 <graphic>
                     <FontIcon iconLiteral="fa-book" iconSize="70" selectionEnd="0" />
                 </graphic>
@@ -108,16 +108,21 @@
 
 
 
-
                         <VBox styleClass="idname" alignment="CENTER" >
 
                             <Label styleClass="id" text="Book ID">
                             </Label>
-                        </VBox >
+                        </VBox>
 
-                        <GridPane styleClass="identry" >
+
+                        <GridPane styleClass="identry">
+
+                            <padding>
+                                <Insets left="5"/>
+                            </padding>
 
                             <VBox spacing="7">
+
 
                                 <Label text="Title:" styleClass="idfield"/>
                                 <TextField fx:id="bookFieldTitle"/>
@@ -144,12 +149,15 @@
                     </VBox >
 
                     <GridPane styleClass="identry" >
+                        <padding>
+                            <Insets left="5"/>
+                        </padding>
 
                         <VBox spacing="7">
 
                             <Label text="Name:" styleClass="idfield"/>
                             <TextField></TextField>
-                            <Label text="Lastname:" styleClass="idfield"/>
+                            <Label text="Last name:" styleClass="idfield"/>
                             <TextField></TextField>
                             <Label text="ID:" styleClass="idfield"/>
                             <TextField></TextField>
