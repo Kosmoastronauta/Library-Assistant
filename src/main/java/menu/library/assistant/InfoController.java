@@ -84,6 +84,12 @@ public class InfoController {
         this.openWindow("Book List", "bookList.fxml", 840, 390);
     }
 
+    @FXML
+    public void onButtonReservationClicked(ActionEvent event)
+    {
+        this.openWindow("Reservation", "reservation.fxml", 1000, 600);
+    }
+
     private void openWindow(String title, String fxmlFile, int x, int y)
     {
         try {

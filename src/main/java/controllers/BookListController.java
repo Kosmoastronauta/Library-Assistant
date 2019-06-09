@@ -72,11 +72,15 @@ public class BookListController implements Initializable {
 
     public static class ViewBook
     {
-        final private SimpleStringProperty id;
-        final private SimpleStringProperty title;
-        final private SimpleStringProperty author;
-        final private SimpleStringProperty edition;
-        final private SimpleStringProperty year;
+         private SimpleStringProperty id;
+         private SimpleStringProperty title;
+         private SimpleStringProperty author;
+         private SimpleStringProperty edition;
+         private SimpleStringProperty year;
+
+        public ViewBook()
+        {
+        }
 
         public ViewBook(String id, String title, String author, String edition, String year)
         {

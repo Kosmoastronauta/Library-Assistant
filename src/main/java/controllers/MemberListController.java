@@ -73,11 +73,13 @@ public class MemberListController implements Initializable {
 
     public static class Person
     {
-        final private SimpleStringProperty id;
-        final private SimpleStringProperty name;
-        final private SimpleStringProperty lastName;
-        final private SimpleStringProperty email;
-        final private SimpleStringProperty phone;
+        private SimpleStringProperty id;
+        private SimpleStringProperty name;
+        private SimpleStringProperty lastName;
+        private SimpleStringProperty email;
+        private SimpleStringProperty phone;
+
+        public Person(){}
 
         public Person(String id, String name, String lastName, String email, String phone)
         {

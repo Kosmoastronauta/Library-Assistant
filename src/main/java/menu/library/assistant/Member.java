@@ -13,7 +13,7 @@ public class Member {
 
     public Member() {}
 
-    public Member(String name, String last_name, String email, int id, String phone)
+    public Member(int id, String name, String last_name, String email, String phone)
     {
        this.name=name;
        this.lastName=last_name;

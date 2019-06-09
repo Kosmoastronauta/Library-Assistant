@@ -76,7 +76,7 @@ public class AddMemberController {
         {
             System.out.println("Everything is OK");
             DataSource data = new DataSource();
-            data.add(new Member(name, lastName, email, Integer.parseInt(id), phone));
+            data.add(new Member(Integer.parseInt(id), name, lastName, email, phone));
         }
 
     }

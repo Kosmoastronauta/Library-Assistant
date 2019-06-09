@@ -39,6 +39,11 @@ public class DataSource
         private static final String BOOK_COLUMN_YEAR = "year";
         private static final String BOOK_COLUMN_ID = "ID";
 
+        public static final String TABLE_RESERVATION = "reservation";
+        public static final String RESERVATION_COLUMN_BOOK = "IDbook";
+        public static final String RESERVATION_COLUMN_MEMBER = "IDmember";
+        public static final String RESERVATION_COLUMN_TIME = "time";
+
         private Connection conn;
 
 
@@ -137,10 +142,10 @@ public class DataSource
                 while (result.next())
                 {
 
-                    members.add(new Member(result.getString(MEMBER_COLUMN_NAME),
+                    members.add(new Member(result.getInt(MEMBER_COLUMN_ID),
+                            result.getString(MEMBER_COLUMN_NAME),
                             result.getString(MEMBER_COLUMN_LASTNAME),
                             result.getString(MEMBER_COLUMN_EMAIL),
-                            result.getInt(MEMBER_COLUMN_ID),
                             result.getString(MEMBER_COLUMN_PHONE)));
 
 
@@ -163,6 +168,49 @@ public class DataSource
             }
 
         }
+
+
+    public List<Member> queryMemberSpecify(Member member)
+    {
+        System.out.println(member.getLastName());
+        try
+        {
+            conn = DriverManager.getConnection(CONNECTION_STRING + DB_NAME);
+            Statement statement = conn.createStatement();
+            ResultSet result = statement.executeQuery("SELECT * FROM " + TABLE_MEMBER + " WHERE " +
+                    TABLE_MEMBER + "." + MEMBER_COLUMN_LASTNAME + " = '" + member.getLastName() + "'");
+
+            List<Member> members = new ArrayList<>();
+
+            while (result.next())
+            {
+
+                members.add(new Member(result.getInt(MEMBER_COLUMN_ID),
+                        result.getString(MEMBER_COLUMN_NAME),
+                        result.getString(MEMBER_COLUMN_LASTNAME),
+                        result.getString(MEMBER_COLUMN_EMAIL),
+                        result.getString(MEMBER_COLUMN_PHONE)));
+
+
+                System.out.println(result.getInt(MEMBER_COLUMN_ID));
+                System.out.println(result.getString(MEMBER_COLUMN_NAME));
+                System.out.println(result.getString(MEMBER_COLUMN_LASTNAME));
+                System.out.println(result.getString(MEMBER_COLUMN_EMAIL));
+                System.out.println(result.getString(MEMBER_COLUMN_PHONE));
+            }
+
+            result.close();
+            conn.close();
+            return members;
+
+        }catch(SQLException e)
+        {
+
+            e.printStackTrace();
+            System.out.println("Query Failed: " + e.getMessage());
+            return null;
+        }
+    }
 
     public List<Book> queryBook()
     {
@@ -202,6 +250,56 @@ public class DataSource
         }
 
     }
+
+    public List<Book> queryBookSpecify()
+    {
+        try{
+            conn = DriverManager.getConnection(CONNECTION_STRING + DB_NAME);
+            Statement statement = conn.createStatement();
+
+            statement.execute("CREATE TABLE IF NOT EXISTS reservation" +
+                    " (IDbook INTEGER , IDmember INTEGER, Time INTEGER )");
+            ResultSet result = statement.executeQuery("SELECT " + BOOK_COLUMN_ID +
+                    ", " + BOOK_COLUMN_TITLE +
+                    ", " + BOOK_COLUMN_AUTHOR +
+                    ", " + BOOK_COLUMN_EDITION +
+                    ", " + BOOK_COLUMN_YEAR +
+                    " FROM " + TABLE_BOOK +
+                    " LEFT JOIN " + TABLE_RESERVATION +
+                    " ON" +
+                    TABLE_BOOK + "." +
+                    BOOK_COLUMN_ID +
+                    " = " +
+                    TABLE_RESERVATION + "." + RESERVATION_COLUMN_BOOK  +
+                    " WHERE " + TABLE_RESERVATION +
+                    "." + RESERVATION_COLUMN_BOOK +
+                    " IS NULL"
+                    );
+
+            List<Book> books = new ArrayList<>();
+
+            while(result.next())
+            {
+                books.add(new Book(result.getInt(BOOK_COLUMN_ID),
+                                        result.getString(BOOK_COLUMN_TITLE),
+                                        result.getString(BOOK_COLUMN_AUTHOR),
+                                        result.getString(BOOK_COLUMN_EDITION),
+                                        result.getInt(BOOK_COLUMN_YEAR)));
+            }
+
+            return  books;
+
+        }catch (SQLException e)
+        {
+            e.printStackTrace();
+            System.out.println();
+            return null;
+        }
+    }
+
+
+
+
 
 }
 

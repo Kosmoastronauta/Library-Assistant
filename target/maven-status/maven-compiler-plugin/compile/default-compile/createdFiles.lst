@@ -11,4 +11,5 @@ controllers/AddMemberController.class
 menu/library/assistant/Main.class
 controllers/Popup.class
 controllers/DataSource.class
+controllers/ReservationController.class
 menu/library/assistant/InfoController.class

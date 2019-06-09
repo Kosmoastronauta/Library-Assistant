@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.ReservationController"
+            prefHeight="600" prefWidth="1000">
+    <BorderPane.margin>
+        <Insets left="25" right="5" top="5" bottom="5"> </Insets>
+    </BorderPane.margin>
+
+    <center>
+
+
+        <VBox>
+            <HBox>
+        <VBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+
+
+            <VBox styleClass="idNameReserv" alignment="CENTER" >
+
+                <Label styleClass="id" text="Member ID">
+                </Label>
+            </VBox >
+
+            <GridPane styleClass="identry" >
+                <padding>
+                    <Insets left="5"/>
+                </padding>
+
+                <VBox spacing="7">
+
+                    <Label text="Name:" styleClass="idfield"/>
+                    <TextField fx:id="memberName"></TextField>
+                    <Label text="Last name:" styleClass="idfield"/>
+                    <TextField fx:id="memberLastName"></TextField>
+                    <Label text="ID:" styleClass="idfield"/>
+                    <TextField fx:id="memberID"></TextField>
+                    <Button  fx:id="searchMember" text="Search" GridPane.rowIndex="8" GridPane.columnIndex="4" styleClass="idsearch" onAction="#onButtonSearchMemberClicked">
+                    </Button>
+                </VBox>
+
+
+
+
+
+            </GridPane>
+
+        </VBox>
+
+            <TableView fx:id="tableViewMember" GridPane.columnIndex="2" GridPane.rowIndex="1" maxHeight="300">
+
+                <columns >
+                    <TableColumn fx:id="colIDMember" text="ID"  minWidth="80" ></TableColumn>
+                    <TableColumn fx:id="colNameMember" text="Name"  minWidth="80"></TableColumn>
+                    <TableColumn fx:id="colLastNameMember" text="Last Name"  minWidth="80"></TableColumn>
+                    <TableColumn fx:id="colEmailMember" text="E-mail"  minWidth="80"></TableColumn>
+                </columns>
+
+            </TableView>
+            </HBox>
+
+            <HBox>
+                <padding>
+                    <Insets>    </Insets>
+                </padding>
+                <VBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+
+
+                    <VBox styleClass="idNameReserv" alignment="CENTER" >
+
+                        <Label styleClass="id" text="Book ID">
+                        </Label>
+                    </VBox >
+
+                    <GridPane styleClass="identry" >
+                        <padding>
+                            <Insets left="5"/>
+                        </padding>
+
+                        <VBox spacing="7">
+
+                            <Label text="Title:" styleClass="idfield"/>
+                            <TextField fx:id="bookTitle"></TextField>
+                            <Label text="Author:" styleClass="idfield"/>
+                            <TextField fx:id="bookAuthor"></TextField>
+                            <Label text="ID:" styleClass="idfield"/>
+                            <TextField fx:id="bookID"></TextField>
+                            <Button fx:id="searchBook" text="Search" GridPane.rowIndex="8" GridPane.columnIndex="4" styleClass="idsearch" onAction="#onButtonSearchBookClicked">
+                            </Button>
+                        </VBox>
+
+
+
+
+
+                    </GridPane>
+
+                </VBox>
+
+                <TableView fx:id="tableViewBook" GridPane.columnIndex="2" GridPane.rowIndex="2" maxHeight="300">
+
+                    <columns >
+                        <TableColumn fx:id="colIDBook" text="ID"  minWidth="80" ></TableColumn>
+                        <TableColumn fx:id="colTitleBook" text="Title"  minWidth="80"></TableColumn>
+                        <TableColumn fx:id="colAuthorBook" text="Author"  minWidth="80"></TableColumn>
+                        <TableColumn fx:id="colEditionBook" text="Edition"  minWidth="80"></TableColumn>
+                    </columns>
+
+                </TableView>
+
+            </HBox>
+
+
+
+
+
+        </VBox>
+
+    </center>
+    <right>
+        <Button text="Reserve" fx:id="buttonReserve" onAction="#onButtonReserveClicked"></Button>
+    </right>
+</BorderPane>

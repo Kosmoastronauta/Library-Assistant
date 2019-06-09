@@ -70,7 +70,7 @@
     <left>
 
         <VBox spacing="10">
-        <Button styleClass="vboxleft" text="Take">
+        <Button styleClass="vboxleft" text="Take" onAction="#onButtonReservationClicked">
             <graphic>
                 <FontIcon styleClass="vboxleft" iconLiteral="fa-book" iconSize="70" selectionEnd="0" />
             </graphic>

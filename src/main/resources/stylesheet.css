@@ -77,6 +77,14 @@
     -fx-pref-width: 300px;
 }
 
+.idNameReserv
+{
+    -fx-margin: 20px;
+    -fx-border-width: 4px;
+    -fx-border-style: solid;
+    -fx-pref-width: 220px;
+}
+
 .id
 {
     -fx-background-color: #2D2D2D;
