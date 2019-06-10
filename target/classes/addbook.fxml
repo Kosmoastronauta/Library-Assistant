@@ -40,7 +40,6 @@
                         <Label styleClass = "memberData" text = "Author*:"     />
                         <Label styleClass = "memberData" text = "Year:"        />
                         <Label styleClass = "memberData" text = "Edition:"     />
-                        <Label styleClass = "memberData" text = "ID*:"         />
 
                         <Button fx:id="buttonAdd" text="Add" minWidth="100" minHeight="50" onAction = "#onButtonAddClicked"/>
 
@@ -51,7 +50,6 @@
                         <TextField styleClass = "dataField" fx:id = "authorField"   />
                         <TextField styleClass = "dataField" fx:id = "yearField"     />
                         <TextField styleClass = "dataField" fx:id = "editionField"  />
-                        <TextField styleClass = "dataField" fx:id = "IDField"       />
                     </VBox>
                 </HBox>
 

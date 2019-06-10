@@ -26,4 +26,14 @@ public class Popup {
 
         alert.showAndWait();
     }
+
+    public void confirmation()
+    {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle(this.title);
+        alert.setHeaderText(this.header);
+        alert.setContentText(this.content);
+
+        alert.showAndWait();
+    }
 }

@@ -27,9 +27,6 @@ public class AddMemberController {
     private TextField addPhoneField;
 
     @FXML
-    private TextField addIDField;
-
-    @FXML
     private Button buttonAddSave;
 
     @FXML
@@ -40,7 +37,6 @@ public class AddMemberController {
         String lastName = addLastNameField.getText();
         String email = addEmailField.getText();
         String phone = addPhoneField.getText();
-        String id = addIDField.getText();
 
         if(!onlyletters(name) || name.length()==0)
         {
@@ -60,11 +56,6 @@ public class AddMemberController {
             p.warning();
         }
 
-        else if(id.length()==0)
-        {
-            Popup p = new Popup("Error Dialog", "Invalid Data", "Inproper ID number");
-            p.warning();
-        }
 
         else if(phone.length()!=0 && !phoneValidation(phone))
         {
@@ -76,7 +67,15 @@ public class AddMemberController {
         {
             System.out.println("Everything is OK");
             DataSource data = new DataSource();
-            data.add(new Member(Integer.parseInt(id), name, lastName, email, phone));
+            Member member = new Member(1, name, lastName, email, phone);
+            data.add(member);
+            Popup p = new Popup("Confirmation", "Adding New member ", "New Member: " +
+                    member.getName() + ", " +
+                    member.getLastName() + ", " +
+                    member.getEmail() + ", " +
+                    member.getPhone());
+
+            p.confirmation();
         }
 
     }

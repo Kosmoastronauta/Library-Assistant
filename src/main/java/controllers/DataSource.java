@@ -59,9 +59,26 @@ public class DataSource
 
                 Statement statement = conn.createStatement();
                 statement.execute("CREATE TABLE IF NOT EXISTS member " +
-                        " (ID INTEGER, name TEXT, lastname TEXT, email TEXT, phone TEXT)");
+                        " (ID INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, lastname TEXT, email TEXT, phone TEXT)");
 
                 System.out.println("Im saving member to database");
+
+                PreparedStatement ps = conn.prepareStatement("insert INTO " + TABLE_MEMBER + "(" +
+                        MEMBER_COLUMN_NAME + ", " +
+                        MEMBER_COLUMN_LASTNAME + ", " +
+                        MEMBER_COLUMN_EMAIL + ", " +
+                        MEMBER_COLUMN_PHONE + ") " +
+                        "VALUES(?,?,?,?)");
+
+                ps.setString(1, member.getName());
+                ps.setString(2, member.getLastName());
+                ps.setString(3, member.getEmail());
+                ps.setString(4, member.getPhone());
+
+                int resultRows = ps.executeUpdate();
+
+
+                /*
 
                 statement.execute("INSERT INTO " + TABLE_MEMBER + " ( " +
                         MEMBER_COLUMN_ID + ", " +
@@ -75,9 +92,11 @@ public class DataSource
                         member.getEmail() + "', '" +
                         member.getPhone() + "' )");
 
+
+                 */
                  conn.close();
 
-                System.out.println("Done");
+                System.out.println("Member has been added");
                 return true;
             }
             catch (SQLException e) {
@@ -96,22 +115,22 @@ public class DataSource
 
                 Statement statement = conn.createStatement();
                 statement.execute("CREATE TABLE IF NOT EXISTS book" +
-                        " (ID INTEGER, title TEXT, author TEXT, edition TEXT, year INTEGER )");
+                        " (ID INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, author TEXT, edition TEXT, year INTEGER )");
 
-
-                statement.execute("INSERT INTO " + TABLE_BOOK + "( " + BOOK_COLUMN_ID + ", " +
+                PreparedStatement ps = conn.prepareStatement("INSERT INTO " + TABLE_BOOK + "(" +
                         BOOK_COLUMN_TITLE + ", " +
                         BOOK_COLUMN_AUTHOR + ", " +
                         BOOK_COLUMN_EDITION + ", " +
                         BOOK_COLUMN_YEAR + ")" +
-                        " VALUES( " + book.getID() + ", '" +
-                        book.getTitle() + "', '" +
-                        book.getAuthor() + "', '" +
-                        book.getEdition() + "', " +
-                        book.getYear() + ")");
+                        "VALUES(?,?,?,?)");
 
+                ps.setString(1, book.getTitle());
+                ps.setString(2, book.getAuthor());
+                ps.setString(3, book.getEdition());
+                ps.setInt(4, book.getYear());
 
-
+                int resultRows = ps.executeUpdate();
+                System.out.println("Book has been added");
                 //  conn.close();
                 return true;
             }
@@ -119,7 +138,6 @@ public class DataSource
                 System.out.println("Something wrong with database + " + e.getMessage());
                 return false;
             }
-
         }
 
         public void close()

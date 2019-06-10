@@ -37,7 +37,6 @@
                     <Label styleClass = "memberData" text = "Last Name*:"   />
                     <Label styleClass = "memberData" text = "E-mail*:"      />
                     <Label styleClass = "memberData" text = "Phone:"        />
-                    <Label styleClass = "memberData" text = "ID Number*:"   />
 
                     <Button fx:id="buttonAddSave" text="Add" minWidth="100" minHeight="50" onAction="#onButtonAddSaveClicked">
 
@@ -48,7 +47,6 @@
                     <TextField fx:id = "addLastNameField" />
                     <TextField fx:id = "addEmailField"    />
                     <TextField fx:id = "addPhoneField"    />
-                    <TextField fx:id = "addIDField"       />
                 </VBox>
             </HBox>
 
