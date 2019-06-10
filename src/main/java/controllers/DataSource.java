@@ -4,6 +4,8 @@ import menu.library.assistant.Book;
 import menu.library.assistant.Member;
 
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,6 +45,8 @@ public class DataSource
         public static final String RESERVATION_COLUMN_BOOK = "IDbook";
         public static final String RESERVATION_COLUMN_MEMBER = "IDmember";
         public static final String RESERVATION_COLUMN_TIME = "time";
+
+
 
         private Connection conn;
 
@@ -105,6 +109,8 @@ public class DataSource
                         book.getAuthor() + "', '" +
                         book.getEdition() + "', " +
                         book.getYear() + ")");
+
+
 
                 //  conn.close();
                 return true;
@@ -259,22 +265,12 @@ public class DataSource
 
             statement.execute("CREATE TABLE IF NOT EXISTS reservation" +
                     " (IDbook INTEGER , IDmember INTEGER, Time INTEGER )");
-            ResultSet result = statement.executeQuery("SELECT " + BOOK_COLUMN_ID +
-                    ", " + BOOK_COLUMN_TITLE +
-                    ", " + BOOK_COLUMN_AUTHOR +
-                    ", " + BOOK_COLUMN_EDITION +
-                    ", " + BOOK_COLUMN_YEAR +
-                    " FROM " + TABLE_BOOK +
-                    " LEFT JOIN " + TABLE_RESERVATION +
-                    " ON" +
-                    TABLE_BOOK + "." +
-                    BOOK_COLUMN_ID +
-                    " = " +
-                    TABLE_RESERVATION + "." + RESERVATION_COLUMN_BOOK  +
-                    " WHERE " + TABLE_RESERVATION +
-                    "." + RESERVATION_COLUMN_BOOK +
-                    " IS NULL"
-                    );
+
+            ResultSet result = statement.executeQuery("SELECT * FROM " +
+                    TABLE_BOOK + " WHERE NOT EXISTS (SELECT * FROM " +
+                    TABLE_RESERVATION + " WHERE " + TABLE_BOOK +
+                    "." + BOOK_COLUMN_ID + "=" +
+                    TABLE_RESERVATION + "." + RESERVATION_COLUMN_BOOK + ")");
 
             List<Book> books = new ArrayList<>();
 
@@ -292,8 +288,39 @@ public class DataSource
         }catch (SQLException e)
         {
             e.printStackTrace();
-            System.out.println();
             return null;
+        }
+    }
+
+
+    public boolean makeReservation(MemberListController.Person person, BookListController.ViewBook viewBook,  LocalDate date )
+    {
+        long end = date.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
+        try{
+            conn = DriverManager.getConnection(CONNECTION_STRING + DB_NAME);
+            Statement statement = conn.createStatement();
+
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO " + TABLE_RESERVATION +
+                    " ( " + RESERVATION_COLUMN_BOOK +
+                    ", " + RESERVATION_COLUMN_MEMBER +
+                    ", " + RESERVATION_COLUMN_TIME + " )" +
+                    " VALUES(?,?,?)");
+            ps.setInt(1, Integer.valueOf(viewBook.getId()));
+            ps.setInt(2, Integer.valueOf(person.getId()));
+            ps.setLong(3, end);
+            int affectedRows = ps.executeUpdate();
+
+            if(affectedRows != 1)
+            {
+                throw new SQLException("Couldn't insert reservation: " + affectedRows);
+            }
+            System.out.println("Reservation made");
+
+            return true;
+        }catch (SQLException e)
+        {
+            e.printStackTrace();
+            return false;
         }
     }
 

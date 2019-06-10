@@ -12,6 +12,7 @@ import menu.library.assistant.Book;
 import menu.library.assistant.Member;
 
 import javax.xml.crypto.Data;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -140,7 +141,7 @@ public class ReservationController
         listBook.removeAll(listBook);
 
         DataSource data = new DataSource();
-        dataListBook = data.queryBook();
+        dataListBook = data.queryBookSpecify();
 
         for(Book book : dataListBook)
         {
@@ -168,6 +169,17 @@ public class ReservationController
         System.out.println(viewBook.getId());
         System.out.println(viewBook.getTitle());
         System.out.println(viewBook.getAuthor());
+
+        DataSource data = new DataSource();
+
+        LocalDate date = LocalDate.now();
+        date = date.plusMonths(1);
+
+        boolean reserv = data.makeReservation(person, viewBook, date);
+
+
+
+
 
 
     }
