@@ -76,7 +76,7 @@
             </graphic>
         </Button>
 
-        <Button styleClass="vboxleft" text="Return">
+        <Button styleClass="vboxleft" text="Return" onAction="#onButtonReturnClicked">
             <graphic>
                 <FontIcon styleClass="vboxleft" iconLiteral="fa-rotate-right" iconSize="70" selectionEnd="0" />
             </graphic>
@@ -180,11 +180,11 @@
 
                     <TableView fx:id="infoTableView" prefHeight="900" prefWidth="580">
                         <columns>
-                            <TableColumn minWidth="110" maxWidth="110" text="ID"></TableColumn>
-                            <TableColumn minWidth="120" maxWidth="120" text="Title/Name"></TableColumn>
-                            <TableColumn minWidth="130" maxWidth="130" text="Author/Last Name"></TableColumn>
-                            <TableColumn minWidth="120" maxWidth="120" text="From"></TableColumn>
-                            <TableColumn minWidth="120" maxWidth="120" text="To"></TableColumn>
+                            <TableColumn fx:id="colBookID" minWidth="110" maxWidth="110" text="ID"></TableColumn>
+                            <TableColumn fx:id="colBookTitle" minWidth="120" maxWidth="120" text="Title/Name"></TableColumn>
+                            <TableColumn fx:id="colBookAuthor" minWidth="130" maxWidth="130" text="Author/Last Name"></TableColumn>
+                            <TableColumn fx:id="colBookFrom" minWidth="100" maxWidth="100" text="From"></TableColumn>
+                            <TableColumn fx:id="colBookTo" minWidth="120" maxWidth="120" text="To"></TableColumn>
 
                         </columns>
                     </TableView>
